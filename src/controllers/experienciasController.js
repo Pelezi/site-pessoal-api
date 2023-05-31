@@ -25,7 +25,7 @@ exports.updateExperiencia = async (req, res) => {
     res.json(experienciaAtualizada);
 }
 
-exports.deleteExperiencia = async (req, res) => {
+exports.deleteExperiencia = async (req, res, next) => {
     const id = parseInt(req.params.id);
     await experienciasRepository.deleteExperiencia(id);
     res.json({message: 'Experiência removida com sucesso!'});
